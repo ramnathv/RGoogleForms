@@ -1,0 +1,11 @@
+---
+layout: exercise
+---
+
+<select name="entry.{{entry}}.single" id="entry_{{entry}}">
+{{# items }}
+  <option value="{{{ value }}}">
+    {{{ value }}}
+  </option> 
+{{/ items }}
+</select>

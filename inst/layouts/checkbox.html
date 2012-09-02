@@ -1,0 +1,26 @@
+<div class="errorbox-good">
+  <div class="ss-item  ss-{{ type }}">
+    <div class="ss-form-entry">
+      <!-- QUESTION TEXT -->
+      <label class="ss-q-title" for="entry_{{ entry }}">
+        <h4>Question {{{ qnum }}}</h4>
+        {{{ content }}}
+      </label>
+      <!-- HELP TEXT -->
+      <label class="ss-q-help" for="entry_{{ entry }}">
+        {{{ help }}}
+      </label>
+      <ul class="ss-choices">
+      {{# items }}
+      <li class="ss-choice-item">
+        <label class="ss-choice-label">
+          <input type="{{type}}" name="entry.{{ entry }}.group" value="{{ item }}" 
+             class="ss-q-{{type}}" id="group_{{ entry }}_{{{ itemnum }}}">
+             {{{ value }}}
+        </label>
+      </li>
+      {{/ items}}
+      </ul>
+     </div>
+  </div>
+</div><br>

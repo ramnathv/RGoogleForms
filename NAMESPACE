@@ -1,0 +1,7 @@
+export(create_quiz)
+import(knitr)
+import(markdown)
+import(yaml)
+import(stringr)
+import(whisker)
+import(plyr)

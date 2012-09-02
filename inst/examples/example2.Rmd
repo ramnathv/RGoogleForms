@@ -1,0 +1,44 @@
+---
+title: Quiz 2
+author: Ramnath Vaidyanathan
+formkey: dEZRRXBzeTdKaExOc3ZPMjBLQTBCX3c6MQ
+description: Quiz 1
+instructions: Please answer all questions in this quiz
+--- &text
+
+**Name**
+
+*** help
+
+Enter your name
+
+--- &text
+
+**Email**
+
+*** help
+
+Enter your email
+
+--- &radio
+
+Choose the correct answer
+
+*** items
+
+- item 1
+- item 2
+- item 3
+- item 4
+
+--- &checkbox
+
+Choose all possible correct answers
+
+*** items
+
+- item 1
+- item 2
+- item 3
+- item 4
+
