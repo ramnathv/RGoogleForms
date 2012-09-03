@@ -1,10 +1,9 @@
 ---
-title: Quiz 1
+title: RGoogleForms
 author: Ramnath Vaidyanathan
 formkey: dEZRRXBzeTdKaExOc3ZPMjBLQTBCX3c6MQ
-description: Quiz 1
-instructions: Please answer all questions in this quiz
-url_bootstrap: ../bootstrap
+description: RGoogleForms
+instructions: This is a prototype for generating quizzes using R Markdown and using Google Forms to collect the responses. You can try it out by filling this quiz and seeing the responses <a href='https://docs.google.com/spreadsheet/ccc?key=0AovoNzJt5GetdEZRRXBzeTdKaExOc3ZPMjBLQTBCX3c'>here</a>. You can find the source <code>R Markdown</code> file generating this quiz <a href='https://github.com/ramnathv/RGoogleForms/blob/master/inst/examples/example.Rmd'>here</a>. You can install the package <code>RGoogleForms</code> from <cod>github</code>
 --- &text
 
 **Name**
@@ -152,3 +151,4 @@ Which command will do a two sample t test with an assumption of equal variances:
 1. `t.test(t1, t2)`
 2. `t.test(t1, t2, var.equal=TRUE)`
 3. `two.sample.t.test(t1,t2)`
+
