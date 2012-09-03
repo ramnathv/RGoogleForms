@@ -4,6 +4,7 @@ author: Ramnath Vaidyanathan
 formkey: dEZRRXBzeTdKaExOc3ZPMjBLQTBCX3c6MQ
 description: Quiz 1
 instructions: Please answer all questions in this quiz
+url_bootstrap: ../bootstrap
 --- &text
 
 **Name**
