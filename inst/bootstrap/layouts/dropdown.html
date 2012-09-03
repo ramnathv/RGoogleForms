@@ -1,0 +1,12 @@
+<div>
+  <label>
+    <h3>Question {{{ qnum }}}</h3>
+    Choose from the dropdown</label>
+  <select name="entry.{{{ entry }}}.single" id="entry_{{{ entry }}}">
+  {{# items }}
+    <option value='{{{ value }}}'>
+      {{{ value }}}
+    </option>
+  {{/ items}}
+  </select>
+</div>

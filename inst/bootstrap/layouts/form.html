@@ -1,0 +1,23 @@
+<div class="ss-form">
+<form action= "https://docs.google.com/spreadsheet/formResponse?formkey={{formkey}}&amp;ifq"
+  id="ss-form" method="post"><br>
+  
+  <!-- START QUESTIONS -->
+   
+{{# exercises }}
+  {{{ exercise }}}
+{{/ exercises }}
+   
+  <!-- END QUESTIONS -->
+  
+  <input name="pageNumber" type="hidden" value="0"> 
+  <input name="backupCache" type="hidden" value="">
+  <div class="ss-item ss-navigate ss-form-entry">
+    <button type="submit" class="btn btn-primary" 
+      name="submit" value="Submit">
+      <i class="icon-fire icon-white"></i> Submit
+    </button>  
+    <!-- <input name="submit" type="submit" value="Submit"> -->
+  </div>
+</form>
+</div>

@@ -1,0 +1,13 @@
+<div>
+  <label>
+    <h3>Question {{{ qnum }}}</h3>
+    {{{ content }}}
+  </label>
+  {{# items }}
+  <label for="group_{{{ entry }}}_1" class="radio">
+    <input type="radio" name='entry.{{{ entry }}}.group'  
+      id='group_{{{entry}}}_{{{itemnum}}}' value='{{{ item }}}'/>
+    {{{ value }}}
+  </label>
+  {{/ items }}
+</div>
