@@ -6,7 +6,19 @@ parse_exercise <- function(exercise){
   exercise = setNames(as.list(exercise), c('meta', 'body'))
   meta = parse_meta(exercise$meta)
   body = parse_body(exercise$body)
+  if(meta$tpl != 'text'){
+  	body = modifyList(body, split_items(body$content))
+  }
   merge_list(meta, body)
+}
+
+split_items <- function(content){
+	itemlist = sub('^(.*)(<[u|o]l>.*</[u|o]l>).*$', '\\2', content)
+	items = str_match_all(itemlist, "<li>(.+?)</li>")[[1]][,2]
+	items = zip_vectors(value = items, item = LETTERS[seq_along(items)], 
+											itemnum = seq_along(items))
+	content = sub('^(.*)(<[u|o]l>.*</[u|o]l>).*$', '\\1', content)
+	list(content = content, items = items)
 }
 
 #' Parse exercise metadata into its elements
@@ -56,14 +68,14 @@ content2blocks <- function(content){
   bnames <- ifelse(grepl(bpat, blocks), gsub(bpat, "\\1", blocks), 'content')
   bcont  <- gsub(bpat, "\\2", blocks)
   bcont  <- setNames(as.list(bcont), bnames)
-  if ('items' %in% names(bcont)){
-    temp = str_match_all(bcont$items, "<li>(.+?)</li>")[[1]][,2]
-    bcont$items = zip_vectors(value = temp, item = LETTERS[seq_along(temp)], 
-      itemnum = seq_along(temp))
+#   if ('items' %in% names(bcont)){
+#     temp = str_match_all(bcont$items, "<li>(.+?)</li>")[[1]][,2]
+#     bcont$items = zip_vectors(value = temp, item = LETTERS[seq_along(temp)], 
+#       itemnum = seq_along(temp))
   	# x <- as.list(seq_along(temp))
   	#    names(x) <- temp
   	#    bcont$items <- iteratelist(x, name = 'value', value = 'item')
-  }
+#   }
   if ('help' %in% names(bcont)){
     bcont$help = gsub("<p>(.+?)</p>", "\\1", bcont$help)
   }
