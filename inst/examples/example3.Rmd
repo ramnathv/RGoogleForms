@@ -1,0 +1,143 @@
+---
+title: RGoogleForms
+author: Ramnath Vaidyanathan
+formkey: dEZRRXBzeTdKaExOc3ZPMjBLQTBCX3c6MQ
+description: RGoogleForms
+instructions: This is a prototype for generating quizzes using R Markdown and using Google Forms to collect the responses. You can try it out by filling this quiz and seeing the responses <a href='https://docs.google.com/spreadsheet/ccc?key=0AovoNzJt5GetdEZRRXBzeTdKaExOc3ZPMjBLQTBCX3c'>here</a>. You can find the source <code>R Markdown</code> file generating this quiz <a href='https://github.com/ramnathv/RGoogleForms/blob/master/inst/examples/example.Rmd'>here</a>. You can install the package <code>RGoogleForms</code> from <cod>github</code>. It is easy to grade the quiz using <code>Flubaroo</code>, which can be installed from the Google Scripts gallery. Integrating it with other Google Scripts, it is possible to email customized reports to students.
+--- &text
+
+**Name**
+
+*** help
+
+Please enter your name
+
+
+```{r setup, cache = F, echo = F, message = F}
+# make this an external chunk that can be included in any file
+options(width = 70)
+opts_chunk$set(message = F, error = F, warning = F, echo = F, comment = NA, fig.align = 'center', dpi = 100, fig.height = 4.5, fig.width = 8)
+source('~/Desktop/R_Projects/Code_Snippets/prob.R')
+require(ggplot2); require(xtable); require(plyr); require(openintro)
+options(xtable.type = 'html')
+knit_hooks$set(inline = function(x) {
+  if(is.numeric(x)) {
+    round(x, getOption('digits'))
+  } else {
+    paste(as.character(x), collapse = ', ')
+  }
+})
+```
+
+--- &text
+
+**Email**
+
+*** help
+
+Please enter your email
+
+--- &radio
+
+What can we say about the relationship between the correlation r and the slope b of the least-squares line for the same set of data? 
+
+
+1. Both r and b always have values between -1 and 1. 
+2. r is always larger than b. 
+3. r and b have the same sign (+ or -). 
+4. the slope b is always equal to the square of the correlation r. 
+5. b is always larger than r.
+
+*** solution
+
+The slope of the least squares line is given by $b = r \times s_y/s_x $. Clearly, $b$ can take values outside of $\pm 1$ and can be smaller, larger or equal to the correlation coefficient $r$. The only true statement is that both $b$ and $r$ must bear the same sign.
+
+`r 1 + 1`
+
+--- &checkbox
+
+The distribution of the amount of money spent by students for textbooks in a semester is approximately normal in shape with a mean of 290 and a standard deviation of 17. According to the standard deviation rule, almost 37.2% of the students spent more than
+
+
+1. 256
+2. 273
+3. 307
+4. 324
+5. 341
+
+*** solution
+
+```{r}
+source('~/Desktop/R_Projects/Code_Snippets/prob.R')
+gnorm(290, 17, quantile = 1 - 0.372)
+```
+
+--- &checkbox
+
+The distribution of the amount of money spent by students for textbooks in a semester is approximately normal in shape with a mean of 290 and a standard deviation of 17. According to the standard deviation rule, almost 37.2% of the students spent more than
+
+1. 256
+2. 273
+3. 307
+4. 324
+5. 341
+
+*** solution
+
+```{r}
+source('~/Desktop/R_Projects/Code_Snippets/prob.R')
+gnorm(290, 17, quantile = 1 - 0.372)
+```
+
+--- #college &radio
+
+<style>#college table{width: 60%;margin: auto auto;}</style>
+
+Can a college's acceptance rate be predicted by the Average SAT score of the students in that college? Here are the results from a sample of schools. Consider the problem of predicting Acceptance Rate (Y) from average SAT score (X). What would be the slope of the best fitting line to predict y from x?
+
+          |SAT Score (X) | % Accepted (Y)
+ ---------|------------- | -------------
+ Mean     | 1264         | 38
+ Stdev.   | 62           | 13
+ Correl.  | -0.61
+
+<br/>
+
+1. `r -0.61^2`
+2. `r -0.61*13/62`
+3. `r -0.61*62/13`
+4. `r -0.61*38/1264`
+
+*** solution
+
+The slope of the least squares line is related to the correlation as $b = r \times \frac{s_y}{s_x}$. Plugging in the values from the table, we get $b = -0.61 \times \frac{13}{62}$, which equals `r -0.61*13/62`.
+
+--- &radio #correlation1
+
+## Exercise 12 ##
+
+The correlation between two scores on tests was found to be exactly 1. Which of the following would not be true, regarding the corresponding scatterplot?
+
+1. Every point would lie along a perfect straight line, with no deviations at all. 
+2. The slope of the best fitting line would be 1. 
+3. The best fitting line would have an uphill (positive slope). 
+4. All of the above are true.
+
+*** solution
+
+A correlation of 1 implies a `perfect` linear relationship meaning all points lie along a straigth line. Given that the correlation is positive, the line will slope uphill. However, there is no reason for the slope of the best fitting line to equal 1.
+
+--- &radio
+
+Let us enter the data on tests with:
+
+```
+t1 <- c(75, 85, 78, 82, 65, 85)
+t2 <- c(90, 95, 87, 92, 94, 95)
+```
+
+Which command will do a two sample t test with an assumption of equal variances:
+
+1. `t.test(t1, t2)`
+2. `t.test(t1, t2, var.equal=TRUE)`
+3. `two.sample.t.test(t1,t2)`
