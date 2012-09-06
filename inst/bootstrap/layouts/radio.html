@@ -1,10 +1,10 @@
 <div>
   <label>
-    <h3>Question {{{ qnum }}}</h3>
+    <h4>Question {{{ qnum }}}</h4>
     {{{ content }}}
   </label>
   {{# items }}
-  <label for="group_{{{ entry }}}_1" class="radio">
+  <label for="group_{{{ entry }}}_1" class="radio {{{ class }}}">
     <input type="radio" name='entry.{{{ entry }}}.group'  
       id='group_{{{entry}}}_{{{itemnum}}}' value='{{{ item }}}'/>
     {{{ value }}}
