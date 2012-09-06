@@ -3,7 +3,7 @@ title: RGoogleForms
 author: Ramnath Vaidyanathan
 formkey: dEZRRXBzeTdKaExOc3ZPMjBLQTBCX3c6MQ
 description: RGoogleForms
-instructions: This is a prototype for generating quizzes using R Markdown and using Google Forms to collect the responses. You can try it out by filling this quiz and seeing the responses <a href='https://docs.google.com/spreadsheet/ccc?key=0AovoNzJt5GetdEZRRXBzeTdKaExOc3ZPMjBLQTBCX3c'>here</a>. You can find the source <code>R Markdown</code> file generating this quiz <a href='https://github.com/ramnathv/RGoogleForms/blob/master/inst/examples/example.Rmd'>here</a>. You can install the package <code>RGoogleForms</code> from <cod>github</code>
+instructions: This is a prototype for generating quizzes using R Markdown and using Google Forms to collect the responses. You can try it out by filling this quiz and seeing the responses <a href='https://docs.google.com/spreadsheet/ccc?key=0AovoNzJt5GetdEZRRXBzeTdKaExOc3ZPMjBLQTBCX3c'>here</a>. You can find the source <code>R Markdown</code> file generating this quiz <a href='https://github.com/ramnathv/RGoogleForms/blob/master/inst/examples/example.Rmd'>here</a>. You can install the package <code>RGoogleForms</code> from <cod>github</code>. It is easy to grade the quiz using <code>Flubaroo</code>, which can be installed from the Google Scripts gallery. Integrating it with other Google Scripts, it is possible to email customized reports to students.
 --- &text
 
 **Name**
