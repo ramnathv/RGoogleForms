@@ -22,4 +22,24 @@ The objective of this package is to make it easy to create Google Forms using an
 
 
 1. Add validation to forms (maybe http://github.com/elclanrs/jq-idealforms)
-2. Add custom response page (would be cool if it is dynamically generated!)
+
+
+#### Add Confirmation Page Redirect! ####
+
+Here is some sample code showing how to do it
+
+1. Create a custom confirmation page and add to `onload` in iframe.
+2. Link the form's submit target to the new iframe.
+
+```
+<script type="text/javascript">var submitted=false;</script>
+<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted){window.location='http://www.morningcopy.com.au/tutorial/redux/thankyou.html';}">
+</iframe>
+
+<!--END OF CONFIRMATION PAGE REDIRECT-->
+
+
+<!--GOOGLE FORM-->
+
+<form action="http://spreadsheets.google.com/formResponse?key=pqbhTz7PIHum_4qKEdbUWVg&amp;embedded=true" method="post" target="hidden_iframe" onsubmit="submitted=true;">
+```
